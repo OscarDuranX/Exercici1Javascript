@@ -32,6 +32,24 @@ $(document).ready(function() {
         $currentListItemLabel.css('text-decoration', 'line-through');
 		  }
 			});
+
+            $('.dades').on('dblclick', function(e){
+
+                $label = $(this).closest('label');
+                $value = $($label).text();
+
+                //alert($value);
+
+                $currentListItem = $(this).closest('li');
+
+                $currentListItem.remove();
+
+                $('#new-todo').val($value);
+
+            });
+
+
+
 		}
 	
 	$todoList = $('#todo-list');
@@ -44,7 +62,7 @@ $(document).ready(function() {
 				"<li>" +
           "<div class='view'>" +
             "<input class='toggle' type='checkbox'>" +
-            "<label data=''>" + " " + $('#new-todo').val() + "</label>" +
+            "<label class='dades' data=''>" + " " + $('#new-todo').val() + "</label>"  +
             "<a class='destroy'></a>" +
           "</div>" +
         "</li>";
